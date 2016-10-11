@@ -8,4 +8,5 @@ With this project, you can have a deep look about spark memory using such as the
 ##Some deep resources about Memory&Spark
 1:[off-heap & on-heap](http://blog.csdn.net/u010722938/article/details/51558315)</br>
 2:[spark memory architecture in StaticMemoryManager before spark-1.6](http://www.cnblogs.com/gaoxing/p/5041806.html)
+3:[tungsten:bring apache spark closer to bare metal](https://databricks.com/blog/2015/04/28/project-tungsten-bringing-spark-closer-to-bare-metal.html)
 ## Pull request is welcome
