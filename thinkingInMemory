@@ -1,0 +1,17 @@
+1: spark memroy: done
+
+   spark memory: User memory: for user programs,such as some func
+                 Preserved memory: for some spark object such as:MemoryManager,BlockManager
+                 Frame memory:  mem & execution mem
+       frame memory: 分为 onheap && offheap
+       onheap:storage memory,execution memory
+       offheap: storage memroy,execution memory
+       默认情况offheap 大小为0，只使用onheap memory
+
+2: tungsten memory: make spark more closer to bare metal
+    Memory manage & 二进制处理： 自己管理内存，避免 overhead gc
+    Cache-aware computation: design algorithm and data structure to use memory hierachy more efficiently, because we know something about the jobs(objects) lifecicle,
+        so we can use L1/L2/L3 more efficiently
+        such as: sort, we can design to as below key-pointer -> value rather than point->(key,value)
+    Code Generation: use some modern compile technology, such as "age" > 3 && "age" < 40, we should At runtime, Spark dynamically generates bytecode for evaluating these expressions, rather than stepping through a slower interpreter for each row.
+    More details: you can see https://databricks.com/blog/2015/04/28/project-tungsten-bringing-spark-closer-to-bare-metal.html
